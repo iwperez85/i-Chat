@@ -2,20 +2,21 @@
 
 /**
  * @ngdoc overview
- * @name iChatApp
+ * @name i-ChatApp
  * @description
- * # iChatApp
+ * # i-ChatApp
  *
  * Main module of the application.
  */
 angular
-  .module('iChatApp', [
+  .module('i-ChatApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ui.bootstrap.modal',
     'firebase'
   ])
   .config(function ($routeProvider) {
@@ -24,11 +25,18 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/signin', {
+        templateUrl: 'views/signin.html',
+        controller: 'AuthCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
+  }).run(function ($cookies, $location, $rootScope) {
+    var username = $cookies.username;
+    if (!username || username.length <= 0) {
+      $location.path('/signin');
+    } else {
+      $rootScope.username = $cookies.username;
+    }
   });

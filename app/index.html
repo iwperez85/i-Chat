@@ -15,38 +15,14 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="iChatApp">
+  <body ng-app="i-ChatApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">iChat</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    
+    <h1 class="name">i-Chat</h1>
 
     <div class="container">
     <div ng-view=""></div>
@@ -54,7 +30,7 @@
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        
       </div>
     </div>
 
@@ -83,8 +59,10 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
     <script src="bower_components/angular-ui-bootstrap/src/transition/transition.js"></script>
     <script src="bower_components/angular-ui-bootstrap/src/modal/modal.js"></script>
 
@@ -94,6 +72,8 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/rooms.js"></script>
         <script src="scripts/services/room.js"></script>
+        <script src="scripts/controllers/auth.js"></script>
+        <script src="scripts/services/message.js"></script>
         <!-- endbuild -->
 </body>
 </html>

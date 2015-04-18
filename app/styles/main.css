@@ -81,3 +81,68 @@ body {
     border-bottom: 0;
   }
 }
+
+.rooms-list{
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 200px;
+
+}
+.rooms-list li {
+  cursor: pointer;
+  border: 5px double white;
+  padding: 5px;
+  margin: 5px;
+  background-color: #B2B7BF;
+}
+
+.rooms-list .current {
+  background-color: #4d4d4d;
+  color: #ffffff;
+}
+
+.messages {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.message {
+  border: 5px double white;
+  padding: 2%;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 0 4px -3px #4d4d4d;
+  box-shadow: 0 0 4px -3px #4d4d4d;
+}
+
+.message .self {
+  color: red;
+}
+
+.name {
+  color: #4d4d4d;
+  font-size: 48px;
+  text-align: center;
+  border: 5px groove white;
+
+  padding: 5px;
+}
+
+.form-group {
+    position:fixed;
+    bottom:0px;
+    width:30%;
+    border: 5px ridge white;
+    font-size: 18px; 
+}
+
+body {
+  background-color: #B2B7BF;
+}
+
+.user-info {
+  position: fixed;
+  top: 30px;
+  right: 5px;
+}
+

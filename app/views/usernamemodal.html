@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h3 class="modal-title">Set your Username!</h3>
+</div>
+<div class="modal-body">
+  <div class="alert alert-danger" ng-repeat="err in errors">
+    {{ err }}
+  </div>
+  <div class="form-group">
+    <input 
+      type="text" 
+      ng-model="username"
+      class="form-control"
+      placeholder="Set your username">
+  </div>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+</div>
+</script>

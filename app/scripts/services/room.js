@@ -19,8 +19,7 @@ angular.module('i-ChatApp')
       all: rooms,
       add: function (data) {
 
-        rooms.$add(data) {
-          room.$add({name: "room 1", user: "will"});
+        rooms.$add(data);
 
       }
     };

@@ -3,7 +3,7 @@
 describe('Controller: AboutCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('iChatApp'));
+  beforeEach(module('i-ChatApp'));
 
   var AboutCtrl,
     scope;
