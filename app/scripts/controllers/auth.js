@@ -9,8 +9,8 @@
  */
 angular.module('i-ChatApp')
 .controller('AuthCtrl', function ($scope, $location, $modal, $rootScope, $cookies) {
-  console.log($cookies);
-  if (!$rootScope.username) {
+  //console.log($cookies);
+  if (!$rootScope.username || $location.path() == '/edituser') {
     showUsernameModal();
   }
 

@@ -90,15 +90,15 @@ body {
 
 }
 .rooms-list li {
-  cursor: pointer;
+  cursor: crosshair;
   border: 5px double white;
   padding: 5px;
   margin: 5px;
-  background-color: #B2B7BF;
+  background-color: #585485;
 }
 
 .rooms-list .current {
-  background-color: #4d4d4d;
+  background-color: #00A9B5;
   color: #ffffff;
 }
 
@@ -108,7 +108,7 @@ body {
 }
 
 .message {
-  border: 5px double white;
+  border: 5px double #0C008F;
   padding: 2%;
   margin-bottom: 10px;
   -webkit-box-shadow: 0 0 4px -3px #4d4d4d;
@@ -119,13 +119,20 @@ body {
   color: red;
 }
 
+.message-input-form {
+  position: fixed;
+  bottom: 0;
+}
+
 .name {
-  color: #4d4d4d;
+  color: blue;
+  box-shadow: 10px 10px 5px blue;
   font-size: 48px;
   text-align: center;
+  text-shadow: 2px 2px red;
   border: 5px groove white;
-
   padding: 5px;
+  background-color: #585485;
 }
 
 .form-group {
@@ -136,9 +143,18 @@ body {
     font-size: 18px; 
 }
 
-body {
-  background-color: #B2B7BF;
+.sidebar {
+  position: absolute;
+  height: 100%;
+  background-color: #585485;
 }
+
+.main-content {
+  position: absolute;
+  height: 100%;
+  overflow-y: scroll;
+}
+
 
 .user-info {
   position: fixed;

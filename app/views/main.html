@@ -1,57 +1,63 @@
-<div class="container" ng-controller="RoomsCtrl as rooms">
+<div ng-controller="RoomsCtrl">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3 sidebar">
+      
+    
+        <h1 class="name">
+          iBloc-Chat
+        <button 
+          class="btn btn-primary" 
+          ng-click="create()">
+          <i class="glyphicon glyphicon-plus" type="button"></i> Create Room
+        </button>
+        </h1>
+      
+      <div class="row">
+        <ul ng-if="rooms" class="list-group rooms-list">
+          <li 
+            ng-repeat="room in rooms" 
+            ng-click="setCurrentRoom(room)"
+            class="list-group-item"
+            ng-class="isCurrent(room) ? 'current' : ''">
+            {{room.name}}
+          </li>
+        </ul>
+      </div>
 
-      <button class="btn btn-primary" ng-click="send()">
-        <i class="glyphicon glyphicon-plus" type="button"></i> Create Room
-      </button>
-
-      <ul ng-if="rooms" class="list-group rooms-list">
-        <li 
-          ng-repeat="room in rooms" 
-          ng-click="setCurrentRoom(room)"
-          class="list-group-item"
-          ng-class="isCurrent(room) ? 'current' : ''">
-          {{room.name}}
-        </li>
-      </ul>
+     <a class="btn btn-primary" href="#/edituser">
+        <i class="glyphicon glyphicon-plus" type="button"></i> Edit User
+      </a> 
     </div>
     
 
-    <div class="col-md-8" ng-show="hasCurrentRoom()">
-      <ul ng-if="messages" class="messages">
-        <li ng-repeat="msg in messages" class="message">
-          <p class="username" ng-class="selfSent(msg) ? 'self' : ''">{{msg.user}}</p>
-          <p class="text">{{msg.text}}</p>
-          <p class="pull-right">
-            
-            {{ (msg.createdAt*1000) | date:'EEEE, h:mm a' }}
-          </p>
-          <div class="clearfix"></div>
-        </li> 
-      </ul>
-      
-      <div class="user-info">
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> User Info
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="menu">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Delete</a></li>
+   <div class="col-md-offset-3 col-md-9 main-content" ng-show="hasCurrentRoom()">
+
+      <div class="messages-container">
+        <ul ng-if="messages" class="messages">
+          <li ng-repeat="msg in messages" class="message">
+            <p class="username" ng-class="selfSent(msg) ? 'self' : ''">{{msg.user}}</p>
+            <p class="text">{{msg.text}}</p>
+            <p class="pull-right">
+              
+              {{ (msg.createdAt*1000) | date:'EEEE, h:mm a' }}
+            </p>
+            <div class="clearfix"></div>
+          </li> 
         </ul>
       </div>
-    </div>
-
-      <form ng-submit="sendMessage()">
-        <div class="form-group">
-          <input 
-            type="text" 
-            class="form-control" 
-            ng-model="message"
-            placeholder="Write Message"
-            <button class="btn btn-primary" ng-click="submit()">
-          <input class="btn btn-primary btn-lg" type="submit" value="Submit">
-            </button>
-          </input>  
+      <form ng-submit="sendMessage()" class="message-input-form">
+        <div class="col-md-12">
+          <div class="input-group">
+            
+            <input 
+              type="text" 
+              class="form-control" 
+              ng-model="message"
+              placeholder="Write Message"/>
+            <span class="input-group-btn">
+              <button class="btn btn-success" type="button">Send</button>
+            </span>
+          </div> 
         </div>    
       </form>
     </div>

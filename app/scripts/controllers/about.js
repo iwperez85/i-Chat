@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name iChatApp.controller:AboutCtrl
+ * @name i-ChatApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the iChatApp
+ * Controller of the i-ChatApp
  */
-angular.module('iChatApp')
+angular.module('i-ChatApp')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

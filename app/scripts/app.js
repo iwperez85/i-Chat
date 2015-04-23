@@ -29,6 +29,10 @@ angular
         templateUrl: 'views/signin.html',
         controller: 'AuthCtrl'
       })
+      .when('/edituser', {
+        templateUrl: 'views/signin.html',
+        controller: 'AuthCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
